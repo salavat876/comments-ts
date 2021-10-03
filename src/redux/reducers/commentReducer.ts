@@ -9,7 +9,7 @@ export const commentReducer = (state:CommentState = initialState,action:CommentA
             return {...state,comment:[...state.comment,action.payload]}
         }
        case CommentActionType.REMOVE_COMMENTS:{
-           const newFilterArr = state.comment.filter(comm =>action.payload  !== comm)
+           const newFilterArr = state.comment.filter(comm =>action.payload.id  !== comm.id)
             return {...state,comment: [...state.comment = newFilterArr] }
         }
         default:return state

@@ -19,14 +19,15 @@ const Form:React.FC = () => {
     return (
         <div>
             <div style={{display:'flex'}}>
-                <form  noValidate autoComplete="off">
-                    <TextField id="standard-basic" label="Comment" value={userInput} onChange={onChange} />
+                <form noValidate autoComplete="off">
+                    <TextField id="standard-basic" label="Comment" value={userInput}  onChange={onChange} />
                 </form>
                 <Button
                     style={{marginLeft:15}}
                     variant="contained"
                     color="secondary"
                     onClick={handleSubmit}
+
                 >
                    Send
                 </Button>

@@ -23,7 +23,7 @@ const CommentList:React.FC = () => {
                 <CardContent style={{display:'flex',flexDirection:'column'}} >
                     <Button
                         style={{alignSelf:'flex-end'}}
-                        onClick={()=>handleRemoveComment(comm,index)}
+                        onClick={()=>handleRemoveComment(comm.comment,comm.id)}
                         variant="outlined"
                         startIcon={<DeleteIcon />}
                     >
