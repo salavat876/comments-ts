@@ -8,12 +8,17 @@ export type CommentState = {
 }
 interface CommentActionAdd {
     type:CommentActionType.ADD_COMMENTS,
-    payload:string
+    payload: {
+        id:number,
+        comment:string
+    }
 }
 interface CommentActionRemove{
     type:CommentActionType.REMOVE_COMMENTS,
-    id?:string
-    payload:string
+    payload: {
+        id:number,
+        comment:string
+    }
 }
 
 export type CommentAction = CommentActionAdd | CommentActionRemove;

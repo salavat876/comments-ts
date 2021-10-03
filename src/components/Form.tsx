@@ -13,7 +13,7 @@ const Form:React.FC = () => {
     }
     const handleSubmit = (e:React.MouseEvent) => {
         e.preventDefault()
-        addComments(userInput)
+         addComments(userInput,Date.now())
         setUserInput('')
     }
     return (

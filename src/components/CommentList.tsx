@@ -10,8 +10,8 @@ const CommentList:React.FC = () => {
     const {comment} = useTypedSelector(state => state.comments);
     const {removeComment} = useActions()
 
-    const handleRemoveComment = (comment:any) => {
-        removeComment(comment)
+    const handleRemoveComment = (comment:any,id:number) => {
+        removeComment(comment,id)
     }
     if (!comment.length) {
         return <Alert style={{width:350,marginTop:15}} severity="info">Комментариев пока нет!</Alert>
@@ -23,17 +23,17 @@ const CommentList:React.FC = () => {
                 <CardContent style={{display:'flex',flexDirection:'column'}} >
                     <Button
                         style={{alignSelf:'flex-end'}}
-                        onClick={()=>handleRemoveComment(comm)}
+                        onClick={()=>handleRemoveComment(comm,index)}
                         variant="outlined"
                         startIcon={<DeleteIcon />}
                     >
                         Delete
                     </Button>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        User
+                        {comm.id}
                     </Typography>
                     <Typography variant="h5" component="h2">
-                        {comm}
+                        {comm.comment}
                     </Typography>
                 </CardContent>
             </Card>))}
