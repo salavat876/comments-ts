@@ -29,9 +29,7 @@ const CommentList:React.FC = () => {
                     >
                         Delete
                     </Button>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        {comm.timeWrite}
-                    </Typography>
+                        <div style={{display:'flex',alignItems:'center'}}><span>user name:</span> <p style={{fontWeight:'bold'}}>{comm.userName}</p></div>
                     <Typography variant="h5" component="h2">
                         {comm.comment}
                     </Typography>

@@ -11,6 +11,7 @@ interface CommentActionAdd {
     payload: {
         id:number,
         comment:string,
+        userName:string,
         timeWrite:string
     }
 }
