@@ -30,7 +30,7 @@ const CommentList:React.FC = () => {
                         Delete
                     </Button>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        {comm.id}
+                        {comm.timeWrite}
                     </Typography>
                     <Typography variant="h5" component="h2">
                         {comm.comment}

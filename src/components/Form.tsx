@@ -6,14 +6,15 @@ import {useActions} from "../hooks/useActions";
 const Form:React.FC = () => {
     const [userInput,setUserInput] = useState('')
     const {addComments} = useActions()
-
-    const onChange =( e:React.ChangeEvent<HTMLInputElement>) => {
+    const date = new Date();
+    const currentDate = `${date.getDate().toString()} ${date.getMonth().toString()} ${date.getFullYear().toString()}`
+    const onChange =(e:React.ChangeEvent<HTMLInputElement>) => {
         const newValue = e.target.value
         setUserInput(newValue)
     }
     const handleSubmit = (e:React.MouseEvent) => {
         e.preventDefault()
-         addComments(userInput,Date.now())
+         addComments(userInput,Date.now(),currentDate)
         setUserInput('')
     }
     return (
@@ -27,7 +28,6 @@ const Form:React.FC = () => {
                     variant="contained"
                     color="secondary"
                     onClick={handleSubmit}
-
                 >
                    Send
                 </Button>

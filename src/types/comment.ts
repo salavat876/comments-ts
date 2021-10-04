@@ -10,7 +10,8 @@ interface CommentActionAdd {
     type:CommentActionType.ADD_COMMENTS,
     payload: {
         id:number,
-        comment:string
+        comment:string,
+        timeWrite:string
     }
 }
 interface CommentActionRemove{
